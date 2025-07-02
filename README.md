@@ -130,7 +130,7 @@
 <header>
   <h1>SMPN 1 PANGKALAN LADA</h1>
   <h2>Website Kelas 9B</h2>
-  <img src="https://cdn.pixabay.com/photo/2022/01/31/17/11/student-6986202_1280.png" class="character" alt="Pelajar SMP">
+  <img src="1748074255588.jpg" class="character" alt="Pelajar SMP">
 </header>
 
 <nav>
@@ -155,7 +155,7 @@
     <a href="https://www.instagram.com/onebraderclass?igsh=dmIydWc1aG50aWdy" target="_blank">Instagram</a> |
     <a href="https://www.tiktok.com/@asixxbee6?_t=ZS-8xULIQm8QXR&_r=1" target="_blank">TikTok</a>
   </p>
-  <img src="smp1plada.jpg" class="character" alt="Pelajar SMP Bawah">
+  <img src="1748074255588.jpg" class="character" alt="Pelajar SMP Bawah">
 </footer>
 
 <script>
