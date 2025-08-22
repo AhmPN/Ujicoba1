@@ -88,7 +88,6 @@
 </head>
 <body>
   <div id="waktu"></div>
-
   <script>
     function updateWaktu() {
       const hariNama = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
@@ -115,8 +114,6 @@
 </body>
 </html>
 </header>
-
-
 <nav>
   <button class="menu-btn" onclick="showContent('pesan')">Tulis Pesan</button>
   <button class="menu-btn" onclick="showContent('struktur')">Struktur Kelas</button>
@@ -165,13 +162,11 @@
     
     <label>Tulis Pesan:</label><br>
     <textarea name="pesan" required 
-              style="width:100%; padding:10px; margin:8px 0; border-radius:10px; border:1px solid #ccc;" rows="4"></textarea><br>
-    
+              style="width:100%; padding:10px; margin:8px 0; border-radius:10px; border:1px solid #ccc;" rows="4"></textarea><br>   
     <!-- Setting tambahan -->
     <input type="hidden" name="_captcha" value="false"> <!-- biar gak ada captcha -->
     <input type="hidden" name="_template" value="table"> <!-- email tampil lebih rapi -->
-    <input type="hidden" name="_subject" value="Pengaduan Baru dari Website Kelas IX-B"> <!-- judul email -->
-    
+    <input type="hidden" name="_subject" value="Pengaduan Baru dari Website Kelas IX-B"> <!-- judul email -->    
     <button type="submit" 
             style="padding:12px 20px; background:#2196f3; color:white; border:none; border-radius:10px; font-weight:bold; cursor:pointer;">
       Kirim Pesan 📧
@@ -340,14 +335,11 @@
         <img src="tarian1.jpg" style="width:100%; border-radius:10px;">
         <p>📸 fotbar setelah tampil menari 😍</p>
         <img src="ibul.jpg" style="width:100%; border-radius:10px;">
-        <p>📸 foto bersama Ibu Laila 😍😍</p>
-        
+        <p>📸 foto bersama Ibu Laila 😍😍</p>       
       `
     };
-
     document.getElementById("content").innerHTML = content[menu] || "<p>Menu belum tersedia.</p>";
   }
 </script>
-
 </body>
 </html>
