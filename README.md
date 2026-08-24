@@ -1,97 +1,300 @@
-
-</html><html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>Website Kelas IX-B</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fff6ec;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #a0522d;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background-color: #f5d5a1;
-      padding: 10px;
-      text-align: center;
-    }
-    .menu-btn {
-      margin: 6px;
-      padding: 10px 18px;
-      background-color: #f0c38e;
-      border: none;
-      border-radius: 12px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .menu-btn:hover {
-      background-color: #dfa96b;
-    }
-    #content {
-      padding: 25px;
-      background-color: #fffdf8;
-      min-height: 300px;
-    }
-    footer {
-      background-color: #a0522d;
-      color: white;
-      text-align: center;
-      padding: 15px;
-    }
-    footer a {
-      color: #ffffff;
-      font-weight: bold;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 8px;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-<header>
-  <h1>SMPN 1 PANGKALAN LADA</h1>
-  <h2>Website Kelas IXB</h2>
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Tanggal & Waktu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Kelas X 7 - SMAN 1 Pangkalan Lada</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --primary-color: #1e3a8a;
+      --accent-color: #3b82f6;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --white: #ffffff;
+      --shadow-soft: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+      --radius: 20px;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
     body {
-      font-family: Arial, sans-serif;
+      background-color: #f8fafc;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    /* Header dengan Foto Latar Belakang */
+    header {
+      position: relative;
+      width: 100%;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      background: #fdfcfb;
-      margin-top: 50px;
+      color: var(--white);
+      padding: 40px 20px;
+      overflow: hidden;
+    }
+    .header-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    .header-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 58, 138, 0.75) 100%);
+      z-index: 2;
+    }
+    header .header-content {
+      position: relative;
+      z-index: 3;
+      max-width: 800px;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    header h2 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #93c5fd;
+      margin-bottom: 20px;
     }
     #waktu {
-      font-size: 15px;
-      font-weight: bold;
-      color: #333;
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    /* Navigasi Mengambang (Floating Menu) - Proporsional Grid */
+    .nav-container {
+      max-width: 1050px;
+      width: 90%;
+      margin: -30px auto 20px auto;
+      position: relative;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+    }
+    .menu-btn {
+      background: var(--white);
+      color: var(--text-main);
+      border: 1px solid #e2e8f0;
+      padding: 14px 12px;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      text-decoration: none;
+    }
+    .menu-btn i {
+      color: var(--primary-color);
+      font-size: 0.95rem;
+      transition: transform 0.3s;
+    }
+    .menu-btn:hover {
+      background-color: var(--primary-color);
+      color: var(--white);
+      border-color: var(--primary-color);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px -5px rgba(30, 58, 138, 0.25);
+    }
+    .menu-btn:hover i {
+      color: var(--white);
+      transform: scale(1.1);
+    }
+    /* Area Konten Utama */
+    main {
+      flex: 1;
+      max-width: 950px;
+      width: 90%;
+      margin: 10px auto 40px auto;
+    }
+    .card-content {
+      background: var(--white);
+      padding: 40px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      animation: fadeIn 0.4s ease-in-out;
+      border: 1px solid #f1f5f9;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card-content h2 {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f1f5f9;
+    }
+    /* Styling Tabel Modern */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+    th, td {
+      padding: 14px 18px;
+      text-align: left;
+    }
+    th {
+      background-color: var(--primary-color);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+    tr:hover {
+      background-color: #f1f5f9;
+    }
+    td {
+      border-bottom: 1px solid #e2e8f0;
+      color: var(--text-main);
+      font-size: 0.9rem;
+    }
+    /* Galeri Grid Style (4 Foto MPLS) */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .gallery-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-item p {
+      padding: 12px;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      text-align: center;
+      font-weight: 500;
+    }
+    /* Footer */
+    footer {
+      background-color: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: auto;
+      font-size: 0.9rem;
+      border-top: 1px solid #1e293b;
+    }
+    footer .social-links {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+    footer a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+    footer a:hover {
+      color: #93c5fd;
     }
   </style>
 </head>
 <body>
-  <div id="waktu"></div>
+  <!-- Header dengan Foto Latar Belakang -->
+  <header>
+    <img src="x75.jpg" alt="Background Sekolah" class="header-bg">
+    <div class="header-overlay"></div>    
+    <div class="header-content">
+      <h1>SMAN 1 Pangkalan Lada</h1>
+      <h2>Informasi Kelas X-7</h2>
+      <div id="waktu">Memuat waktu...</div>
+    </div>
+  </header>
+  <!-- Navigasi Mengambang (Floating Menu) Lengkap dengan Tombol Jurnal -->
+  <div class="nav-container">
+    <button class="menu-btn" onclick="showContent('beranda')"><i class="fa-solid fa-house"></i> Beranda</button>
+    <button class="menu-btn" onclick="showContent('struktur')"><i class="fa-solid fa-sitemap"></i> Struktur</button>
+    <button class="menu-btn" onclick="showContent('anggota')"><i class="fa-solid fa-users"></i> Anggota</button>
+    <button class="menu-btn" onclick="showContent('pelajaran')"><i class="fa-solid fa-calendar-days"></i> Jadwal</button>
+    <button class="menu-btn" onclick="showContent('piket')"><i class="fa-solid fa-broom"></i> Piket</button>
+    <button class="menu-btn" onclick="showContent('pr')"><i class="fa-solid fa-book"></i> Tugas PR</button>
+    <button class="menu-btn" onclick="showContent('galeri')"><i class="fa-solid fa-images"></i> Galeri</button>
+    <a href="https://aku-sehat.vercel.app/" target="_blank" class="menu-btn"><i class="fa-solid fa-list-check"></i> Jurnal</a>
+    <button class="menu-btn" onclick="showContent('pesan')"><i class="fa-solid fa-envelope"></i> Pesan</button>
+  </div>
+  <!-- Konten Utama -->
+  <main>
+    <div id="content" class="card-content">
+      <h2>Selamat Datang di Website Kelas X-7!</h2>
+      <p style="color: var(--text-muted); line-height: 1.7; margin-top: 10px;">Website resmi kelas X-7 untuk mempermudah koordinasi, melihat jadwal, serta berbagai informasi penting lainnya secara cepat, rapi, dan terpadu.</p>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer>
+    <p>Hak Cipta &copy; 2026 Kelas X-7 | SMAN 1 Pangkalan Lada</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+    </div>
+  </footer>
+  <!-- Script JavaScript -->
   <script>
+    // Jam Realtime
     function updateWaktu() {
       const hariNama = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
-      const bulanNama = ["Januari","Februari","Maret","April","Mei","Juni",
-                         "Juli","Agustus","September","Oktober","November","Desember"];
+      const bulanNama = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
       let sekarang = new Date();
       let hari = hariNama[sekarang.getDay()];
       let tanggal = sekarang.getDate();
@@ -99,230 +302,192 @@
       let tahun = sekarang.getFullYear();
       let jam = String(sekarang.getHours()).padStart(2, '0');
       let menit = String(sekarang.getMinutes()).padStart(2, '0');
-      let detik = String(sekarang.getSeconds()).padStart(2, '0');
-      document.getElementById("waktu").innerHTML =
-        `${hari}, ${tanggal} ${bulan} ${tahun} | ${jam}:${menit}:${detik}`;
+      let detik = String(sekarang.getSeconds()).padStart(2, '0');     
+      const elemenWaktu = document.getElementById("waktu");
+      if(elemenWaktu) {
+        elemenWaktu.innerHTML = `${hari}, ${tanggal} ${bulan} ${tahun} &bull; ${jam}:${menit}:${detik}`;
+      }
     }
     setInterval(updateWaktu, 1000);
     updateWaktu();
-  </script>
-</body>
-</html>
-</header>
-<nav>
-  <button class="menu-btn" onclick="showContent('pesan')">Tulis Pesan</button>
-  <button class="menu-btn" onclick="showContent('struktur')">Struktur Kelas</button>
-  <button class="menu-btn" onclick="showContent('anggota')">Anggota Siswa</button>
-  <button class="menu-btn" onclick="showContent('tata')">Tata Tertib Kelas</button>
-  <button class="menu-btn" onclick="showContent('kebersihan')">Peraturan Kebersihan</button>
-  <button class="menu-btn" onclick="showContent('pelajaran')">Jadwal Pelajaran</button>
-  <button class="menu-btn" onclick="showContent('piket')">Jadwal Piket</button>
-  <button class="menu-btn" onclick="showContent('pr')">Tugas / PR</button>
-  <button class="menu-btn" onclick="showContent('galeri')">Galeri Foto</button>
-</nav>
-<div id="content">
-  <h2>Selamat datang di Website Kelas IX-B!</h2>
-  <p>Klik di atas untuk melihat informasi penting dan seru seputar kelas kita 😊</p>
-</div>
-<footer>
-  <p>Website Kelas IXB | Designed by: APutraN</p>
-  <p>
-    <!-- Tambahkan link Font Awesome di bagian <head> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <a href="https://www.instagram.com/ofc.songobhee9?igsh=MTFmeTdrazB1dXd5NA" target="_blank" style="margin: 0 10px; text-decoration: none; color: #E1306C;">
-            <i class="fab fa-instagram"></i> Instagram
-        </a>
-        <a href="https://www.tiktok.com/@asixxbee6?_t=ZS-8xULIQm8QXR&_r=1" target="_blank" style="margin: 0 10px; text-decoration: none; color: #000;">
-            <i class="fab fa-tiktok"></i> TikTok
-        </a>
-    </p>
-</footer>
-<script>
-  function showContent(menu) {
-    const content = {
-      pesan: `
-        <div id="content">
-  <section id="pengaduan">
-  <h2>Tulis Pesan Untuk Kelas IX-B</h2>
-  <p>Silakan isi form di bawah untuk menyampaikan pesan. Klik 2x untuk mengirim pesan.</p>
-  <form action="https://formsubmit.co/ahmadputra.nur31@GMAIL.COM" method="POST"
-        style="max-width:450px; margin:auto; background:#f9f9f9; padding:20px; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">  
-    <label>Nama:</label><br>
-    <input type="text" name="nama" required 
-           style="width:100%; padding:10px; margin:8px 0; border-radius:10px; border:1px solid #ccc;"><br> 
-    <label>Tulis Pesan:</label><br>
-    <textarea name="pesan" required 
-              style="width:100%; padding:10px; margin:8px 0; border-radius:10px; border:1px solid #ccc;" rows="4"></textarea><br>   
-    <!-- Setting tambahan -->
-    <input type="hidden" name="_captcha" value="false"> <!-- biar gak ada captcha -->
-    <input type="hidden" name="_template" value="table"> <!-- email tampil lebih rapi -->
-    <input type="hidden" name="_subject" value="Pengaduan Baru dari Website Kelas IX-B"> <!-- judul email -->    
-    <button type="submit" 
-            style="padding:12px 20px; background:#2196f3; color:white; border:none; border-radius:10px; font-weight:bold; cursor:pointer;">
-      Kirim Pesan 📧
-    </button>
-  </form>
-</section>
+    // Data Konten Lengkap
+    const contentData = {
+      beranda: `
+        <h2>Selamat Datang di Website Kelas X-7!</h2>
+        <p style="color: var(--text-muted); line-height: 1.7; margin-top: 10px;">Website resmi kelas X-7 untuk mempermudah koordinasi akademik, melihat jadwal, serta berbagai informasi penting lainnya secara cepat, rapi, dan terpadu.</p>
       `,
       struktur: `
-        <h2>Struktur Kelas IX-B</h2>
-        <ul>
-          <h3>Wali Kelas : Musringatun,S.Pd.I.</h3>
-          <li>Ketua Kelas: Ahmad Putra Nurrohim</li>
-          <li>Wakil Ketua: Zaky Sofyan</li>
-          <li>Sekretaris 1: Amelia Nur R</li>
-          <li>Sekretaris 2: Adelia Ainun Z</li>
-          <li>Bendahara 1: Devi Nur M</li>
-          <li>Bendahara 2: Dewi Audray A</li>
-          <li>Seksi Kerohanian 1: Nabila</Li>
-          <li>Seksi Kerohanian 2: Dira</li>
-          <li>Seksi Keamanan 1: Azriel</li>
-          <li>Seksi Keamanan 2: Yogik</li>
-          <li>Seksi Kebersihan 1: Dafi</li>
-          <li>Seksi Kebersihan 2: Farras</li>
-          <li>Seksi Kesehatan 1: Rishad</li>
-          <li>Seksi Kesehatan 2: Riyo</li>
-        </ul>
+        <h2>Struktur Organisasi Kelas X-7</h2>
+        <table>
+          <tr><th>Jabatan</th><th>Nama Lengkap</th></tr>
+          <tr><td>Wali Kelas</td><td>Arif Dedy Purwanto, S.Pd.</td></tr>
+          <tr><td>Ketua Kelas</td><td>Roland Putra Lana</td></tr>
+          <tr><td>Wakil Ketua</td><td>Ahmad Putra Nurrohim</td></tr>
+          <tr><td>Sekretaris 1</td><td>Jordan Sophy Rosenelly</td></tr>
+          <tr><td>Sekretaris 2</td><td>Amelia Nur Damayanti</td></tr>
+          <tr><td>Bendahara 1</td><td>Nayra Yasyifa Ramadhania</td></tr>
+          <tr><td>Bendahara 2</td><td>Amanda Yurin Elaeis Oleifera</td></tr>
+          <tr><td>Keamanan</td><td>Yoga & Hafid</td></tr>
+          <tr><td>Kesehatan</td><td>Nabila & Jafna</td></tr>
+          <tr><td>Kebersihan</td><td>Kenya & Rianty</td></tr>
+          <tr><td>Keimanan</td><td>Lisfa & Ifan</td></tr>
+        </table>
       `,
       anggota: `
-        <h2>Daftar Anggota Siswa Kelas IX-B (32 Siswa)</h2>
-        <ol>
-          <li>Adelia Ainun Zakia</li>
-          <li>Adinda Selmi Yusfita</li>
-          <li>Ahmad Putra Nurrohim</li>
-          <li>Alisia Jastin</li>
-          <li>Amelia Nur Rahmadani</li>
-          <li>Anita Sulfania</li>
-          <li>Cahya Nengrum Aulia Ulfah</li>
-          <li>Choliv Fuadiya</li>
-          <li>Dafi Idriansyah</li>
-          <li>Devi Nur Maulidda</li>
-          <li>Dewi Audray Agdiningviar</li>
-          <li>Dimas Surya Irawan</li>
-          <li>Dira Hadi Erwanto</li>
-          <li>Dwi Irji Febiana</li>
-          <li>Edo Hariyadi</li>
-          <li>Erwin Alfiromdoni</li>
-          <li>Imana Pungky Mavano</li>
-          <li>Micko Maulana</li>
-          <li>Muhamad Azriel Ardianta</li>
-          <li>Muhamad Fahmy Ferdiansyah</li>
-          <li>Muhamad Farras Ahsanul Huda</li>
-          <li>Muhammad Arjuna Muarif Salam</li>
-          <li>Muhammad Rishad Tabatala Arsodiq</li>
-          <li>Mutiara Dwi Febrianti</li>
-          <li>Nabila Azzahra</li>
-          <li>Nur Sabrina</li>
-          <li>Putri Nur Ainiyyah Zahraa</li>
-          <li>Riyo Ramadhani</li>
-          <li>Silda Simatus Zahro</li>
-          <li>Sintia Nabila</li>
-          <li>Yogik Aditiyono</li>
-          <li>Zaky Sofyan</li>
-        </ol>
-      `,
-      tata: `
-        <h2>Tata Tertib Kelas</h2>
-        <ol>
-          <li>Datang tepat waktu sebelum jam pelajaran dimulai.</li>
-          <li>Siswa wajib mengerjakan tugas yang diberikan kepada guru.</li>
-          <li>Berpakaian rapi dan sesuai peraturan sekolah.</li>
-          <li>Berperilaku sopan terhadap guru dan teman.</li>
-          <li>dilarang makan/minum di dalam kelas saat pelajaran berlangsung.</li>
-        </ol>
-      `,
-      kebersihan: `
-        <h2>Peraturan Kebersihan Kelas</h2>
-        <ul>
-          <li>Buang sampah pada tempatnya.</li>
-          <li>tidak mengotori kelas</li>
-          <li>Petugas piket wajib menyapu dan merapikan kelas setiap pagi dan sebelum pulang sekolah.</li>
-          <li>Petugas piket wajib lapor absen sebelum mulai pelajaran.</li>
-        </ul>
+        <h2>Daftar Anggota Siswa Kelas X-7 (35 Siswa)</h2>
+        <table>
+          <tr>
+            <th style="width: 70px; text-align: center;">No</th>
+            <th>Nama Lengkap Siswa</th>
+          </tr>
+          <tr><td style="text-align: center;">1</td><td>ACHMAD NOOR HAFIID</td></tr>
+          <tr><td style="text-align: center;">2</td><td>AHMAD PUTRA NURROHIM</td></tr>
+          <tr><td style="text-align: center;">3</td><td>AMANDA YURIN ELAEIS OLEIFERA</td></tr>
+          <tr><td style="text-align: center;">4</td><td>AMELIA NUR DAMAYANTI</td></tr>
+          <tr><td style="text-align: center;">5</td><td>ANITA SULFANIA</td></tr>
+          <tr><td style="text-align: center;">6</td><td>ARDI EXSA PUTRA PRATAMA</td></tr>
+          <tr><td style="text-align: center;">7</td><td>AULIA NOVA VELISYA</td></tr>
+          <tr><td style="text-align: center;">8</td><td>DAFA RISKI NUGROHO PRATAMA</td></tr>
+          <tr><td style="text-align: center;">9</td><td>DIAH ANNISA FITRI</td></tr>
+          <tr><td style="text-align: center;">10</td><td>DIFRI BAGUS WIBOWO</td></tr>
+          <tr><td style="text-align: center;">11</td><td>ISTNAIN ROMDHONI</td></tr>
+          <tr><td style="text-align: center;">12</td><td>JAFNA PUTRA PRATAMA</td></tr>
+          <tr><td style="text-align: center;">13</td><td>JORDAN SOPHY ROSENELLY</td></tr>
+          <tr><td style="text-align: center;">14</td><td>KENYA LAXVICA SASTRI</td></tr>
+          <tr><td style="text-align: center;">15</td><td>LISFA DWI PRASETIANI</td></tr>
+          <tr><td style="text-align: center;">16</td><td>MEYLA ALIFFIA</td></tr>
+          <tr><td style="text-align: center;">17</td><td>MOCHAMMAD DARREN AL-FARIZI</td></tr>
+          <tr><td style="text-align: center;">18</td><td>MUHAMAD AZHAR SUHARTOYO</td></tr>
+          <tr><td style="text-align: center;">19</td><td>MUHAMAD IFAN NUGROHO</td></tr>
+          <tr><td style="text-align: center;">20</td><td>MUHAMMAD ARJUNA MUARIF SALAM</td></tr>
+          <tr><td style="text-align: center;">21</td><td>MUHAMMAD DEVANATA ROHAN</td></tr>
+          <tr><td style="text-align: center;">22</td><td>MUHAMMAD JOE'S AKBAR</td></tr>
+          <tr><td style="text-align: center;">23</td><td>MUHAMMAD RISHAD TABATALA ARSODIQ</td></tr>
+          <tr><td style="text-align: center;">24</td><td>NABILA AULIA QORIK</td></tr>
+          <tr><td style="text-align: center;">25</td><td>NAYRA YASYIFA RAMADHANIA</td></tr>
+          <tr><td style="text-align: center;">26</td><td>NIKEN RARA ISTIQOMAN</td></tr>
+          <tr><td style="text-align: center;">27</td><td>NUR AZIZAH LAILATUL JANNAH</td></tr>
+          <tr><td style="text-align: center;">28</td><td>PUTRI NUR AINIYYAH ZAHRAA</td></tr>
+          <tr><td style="text-align: center;">29</td><td>RIANTY ISRA KUSUMA AYU</td></tr>
+          <tr><td style="text-align: center;">30</td><td>ROLAND PUTRA LANA</td></tr>
+          <tr><td style="text-align: center;">31</td><td>ROSA DWI OVILIA</td></tr>
+          <tr><td style="text-align: center;">32</td><td>SELA OKTAVIANA</td></tr>
+          <tr><td style="text-align: center;">33</td><td>TRI YOGA SAPUTRA</td></tr>
+          <tr><td style="text-align: center;">34</td><td>VELLYNA ERKYLIA SEPTIRA PUTRI</td></tr>
+          <tr><td style="text-align: center;">35</td><td>ZAHRA DWI YUDHA</td></tr>
+        </table>
       `,
       pelajaran: `
-        <h2>Jadwal Pelajaran Kelas IX-B</h2>
+        <h2>Jadwal Pelajaran Kelas X-7</h2>
         <table>
           <tr><th>Hari</th><th>Mata Pelajaran</th></tr>
-          <tr><td>Senin</td><td>Bhs.Inggris, Pend.Pancasila, IPA</td></tr>
-          <tr><td>Selasa</td><td>IPS, Informatika, Bhs.Indonesia</td></tr>
-          <tr><td>Rabu</td><td>Pend.Agama, Matematika, Seni Budaya</td></tr>
-          <tr><td>Kamis</td><td>PJOK, Matematika, Mulok, IPA</td></tr>
-          <tr><td>Jumat</td><td>Bhs.Indonesia</td></tr>
-          <tr><td>Sabtu</td><td>P5</td></tr>
+          <tr><td>Senin</td><td>MTK Wajib, Geografi, B.Indonesia, B.inggris</td></tr>
+          <tr><td>Selasa</td><td>Ekonomi, Sejarah, Seni Budaya, Informatika, P.Pancasila</td></tr>
+          <tr><td>Rabu</td><td>B.Indonesia, Pend.Agama, PJOK, PBJBL, Sosiologi</td></tr>
+          <tr><td>Kamis</td><td>PBJBL, Fisika, P.Pancasila</td></tr>
+          <tr><td>Jumat</td><td>BK, Biologi, Kimia</td></tr>
         </table>
       `,
       piket: `
-        <h2>Jadwal Piket Kelas IX-B</h2>
+        <h2>Jadwal Piket Harian</h2>
         <table>
-          <tr><th>Hari</th><th>Nama Petugas</th></tr>
-          <tr><td>Senin</td><td>Nabila, Silda, Adelia, Micko, Fahmi, Rishad</td></tr>
-          <tr><td>Selasa</td><td>Sabrina, Sintia, Cahya, Putra, Dafi</td></tr>
-          <tr><td>Rabu</td><td>Anitaaa, Dwi Irji, Mutiara, Azriel, Farras</td></tr>
-          <tr><td>Kamis</td><td>Jastin, Zahraa, Dira, Pungky, Erwin</td></tr>
-          <tr><td>Jumat</td><td>Devi, Amelia, Arjuna, Dimas, Riyo, Zaky</td></tr>
-          <tr><td>Sabtu</td><td>Via, Choliv, Adinda, Edo, Yogik</td></tr>
+          <tr><th>Hari</th><th>Nama Petugas Piket</th></tr>
+          <tr><td>Senin</td><td>Amanda, Sophy, Nayra, Rosa, Putra, Nain, Arjuna, Yoga</td></tr>
+          <tr><td>Selasa</td><td>Amelia, Kenya, Niken, Sela, Hafid, Jafna, Defa</td></tr>
+          <tr><td>Rabu</td><td>Anita, Lisfa, Azizah, Vellyna, Aldi, Darren, Jojo</td></tr>
+          <tr><td>Kamis</td><td>Aulia, Mayla, Putri Nur, Zahra Dwi, Dafa, Azhar, Rishad</td></tr>
+          <tr><td>Jumat</td><td>Diah, Nabila, Rianty, Difri, Ifan, Roland</td></tr>
         </table>
       `,
-      pr: `   
-        <h1>Tugas / PR Terbaru Kamis,21 08 2025</h1>
-        <ul>
-          <h2>Tidak Ada Tugas
-        </ul>
-        <div id="content">
-  <section id="pengaduan">
-  <h4>Tulis Pesan Untuk Menanyakan Tugas Jika Belum Mengerti</h4>
-  <form action="https://formsubmit.co/ahmadputra.nur31@GMAIL.COM" method="POST"
-        style="max-width:450px; margin:auto; background:#f9f9f9; padding:20px; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">  
-    <label>Nama:</label><br>
-    <input type="text" name="nama" required 
-           style="width:100%; padding:10px; margin:8px 0; border-radius:10px; border:1px solid #ccc;"><br>  
-    <label>Tulis Pesan:</label><br>
-    <textarea name="pesan" required 
-              style="width:100%; padding:10px; margin:8px 0; border-radius:10px; border:1px solid #ccc;" rows="4"></textarea><br>  
-    <!-- Setting tambahan -->
-    <input type="hidden" name="_captcha" value="false"> <!-- biar gak ada captcha -->
-    <input type="hidden" name="_template" value="table"> <!-- email tampil lebih rapi -->
-    <input type="hidden" name="_subject" value="Pengaduan Baru dari Website Kelas IX-B"> <!-- judul email --   
-    <button type="submit" 
-            style="padding:12px 20px; background:#2196f3; color:white; border:none; border-radius:10px; font-weight:bold; cursor:pointer;">
-      Kirim Pesan 📧
-    </button>
-  </form>
-</section>
+      pr: `
+        <h2>Informasi Tugas & PR Terbaru</h2>
+        <div style="background: #f8fafc; border-left: 4px solid var(--primary-color); padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+          <h4 style="color: var(--primary-color); margin-bottom: 5px;">Pengumuman Tugas</h4>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Silakan cek secara berkala atau tanyakan langsung melalui kotak pesan jika ada tugas yang belum dimengerti.</p>
+        </div>
       `,
       galeri: `
-        <h2>Galeri Foto & Kenangan</h2>
-        <img src="fotoc2.jpg" style="width:100%; border-radius:10px;">
-        <p>📷 foto bersama 😘
-        <img src="fotoc1.jpg" style="width:100%; border-radius:10px;">
-        <p>📷 foto bersama 😘
-        <img src="fotoulangan.jpg" style="width:100%; border-radius:10px;">
-        <p>📸 foto ulangan hari ke 2 😍</p>
-        <img src="persiapanupacara.jpg" style="width:100%; border-radius:10px;">
-        <p>📸 foto persiapan upacara 😍</p>
-        <img src="upacara1.jpg" style="width:100%; border-radius:10px;">
-        <p>📸 fotbar setelah upacara bersama Ibu Yuni 😍</p>
-        <img src="upacara2.jpg" style="width:100%; border-radius:10px;">
-        <p>📸 fotbar setelah upacara 😍</p>
-        <img src="upacara3.jpg" style="width:100%; border-radius:10px;">
-        <p>📸 fotbar setelah upacara 😍</p>
-        <img src="kemah1.jpg" style="width:100%; border-radius:10px;">
-        <p>📸 fotbar cewek cantik 8b 😍</p>
-        <img src="kemah2.jpg" style="width:100%; border-radius:10px;">
-        <p>📸 🤣🤣</p>
-        <img src="kemah3.jpg" style="width:100%; border-radius:10px;">
-        <p>📸 foto laki" ngerumpi😍</p>
-        <img src="kemah4.jpg" style="width:100%; border-radius:10px;">
-        <p>📸  cewek nya makan, cowok nya yang masak 😅</p>
-        <img src="tarian1.jpg" style="width:100%; border-radius:10px;">
-        <p>📸 fotbar setelah tampil menari 😍</p>
-        <img src="ibul.jpg" style="width:100%; border-radius:10px;">
-        <p>📸 foto bersama Ibu Laila 😍😍</p>       
+        <h2>Galeri Foto & Kenangan MPLS</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="mpls1.jpg" alt="Foto MPLS 1">
+            <p>📸 Foto Bersama MPLS 1 😍</p>
+          </div>
+          <div class="gallery-item">
+            <img src="mpls2.jpg" alt="Foto MPLS 2">
+            <p>📸 Foto Bersama MPLS 2 😍</p>
+          </div>
+          <div class="gallery-item">
+            <img src="mpls3.jpg" alt="Foto MPLS 3">
+            <p>📸 Foto Bersama MPLS 3 😍</p>
+          </div>
+          <div class="gallery-item">
+            <img src="mpls4.jpg" alt="Foto MPLS 4">
+            <p>📸 Foto Bersama MPLS 4 😍</p>
+          </div>
+        </div>
+      `,
+      pesan: `
+        <div style="max-width: 450px; margin: 0 auto; background: #efeae2; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); overflow: hidden; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; position: relative;">
+          <!-- Header WhatsApp -->
+          <div style="background: #005e54; color: white; padding: 12px 16px; display: flex; align-items: center; gap: 12px;">
+            <div style="position: relative;">
+              <div style="width: 40px; height: 40px; background: #128c7e; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; color: white;">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <span style="position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; background: #25d366; border: 2px solid #005e54; border-radius: 50%;"></span>
+            </div>
+            <div>
+              <h4 style="margin: 0; font-size: 16px; font-weight: 600;">Admin Kelas X-7 (WA)</h4>
+              <span style="font-size: 11px; opacity: 0.8;">online</span>
+            </div>
+          </div>
+          <!-- Form Kirim WhatsApp -->
+          <div style="padding: 16px; display: flex; flex-direction: column; gap: 12px;">            
+            <!-- Bubble Chat: Input Nama -->
+            <div style="background: #ffffff; padding: 10px 14px; border-radius: 0 12px 12px 12px; max-width: 85%; box-shadow: 0 1px 0.5px rgba(0,0,0,0.13); align-self: flex-start;">
+              <label style="font-size: 12px; color: #005e54; font-weight: bold; display: block; margin-bottom: 4px;">Nama Kamu:</label>
+              <input type="text" id="wa-nama" required placeholder="Ketik nama di sini..." 
+                     style="width: 100%; border: none; outline: none; font-size: 14px; background: transparent; color: #333; box-sizing: border-box;">
+            </div>
+            <!-- Bubble Chat: Input Pesan -->
+            <div style="background: #ffffff; padding: 10px 14px; border-radius: 0 12px 12px 12px; max-width: 85%; box-shadow: 0 1px 0.5px rgba(0,0,0,0.13); align-self: flex-start; position: relative; width: 100%;">
+              <label style="font-size: 12px; color: #005e54; font-weight: bold; display: block; margin-bottom: 4px;">Tulis Pesan / Tugas:</label>
+              <textarea id="wa-pesan" required placeholder="Pesan pengaduan, atau tanyakan tugas PR kelas X-7..." rows="3"
+                        style="width: 100%; border: none; outline: none; font-size: 14px; background: transparent; color: #333; resize: none; box-sizing: border-box;"></textarea>
+            </div>
+            <!-- Panel Tombol Kirim ala WhatsApp Input Bar -->
+            <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px; background: #f0f2f5; padding: 8px 12px; border-radius: 24px; position: relative;">
+              <div style="flex-grow: 1; font-size: 13px; color: #667781; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Kirim langsung ke WhatsApp</div>             
+              <button type="button" onclick="kirimKeWhatsApp()"
+                      style="background: #00a884; color: white; border: none; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transition: 0.2s;">
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
       `
     };
-    document.getElementById("content").innerHTML = content[menu] || "<p>Menu belum tersedia.</p>";
-  }
-</script>
+    function showContent(menu) {
+      const container = document.getElementById("content");
+      container.innerHTML = contentData[menu] || "<p>Halaman tidak ditemukan.</p>";
+    }
+    // Fungsi untuk mengarahkan data ke WhatsApp
+    function kirimKeWhatsApp() {
+      const nama = document.getElementById('wa-nama').value.trim();
+      const pesan = document.getElementById('wa-pesan').value.trim();
+      if (!nama || !pesan) {
+        alert('Mohon isi Nama dan Pesan terlebih dahulu!');
+        return;
+      }
+      // Nomor WhatsApp tujuan
+      const nomorWa = '6285824522033';
+      // Format teks pesan
+      const teksFormat = `Halo Admin Kelas X-7,%0A%0A*Nama Pengirim:* ${encodeURIComponent(nama)}%0A*Pesan:* ${encodeURIComponent(pesan)}`;
+      // Membuka URL WhatsApp
+      const urlWa = `https://wa.me/${nomorWa}?text=${teksFormat}`;
+      window.open(urlWa, '_blank');
+    }
+  </script>
 </body>
 </html>
